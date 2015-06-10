@@ -107,6 +107,8 @@ def show_user(config,user,view_details_user=0):
 
     traffic_regexp = u'\#(RETENCI[OÓ]NE?S?)\sn?i?v?e?l?\s?(\w+)[\s\w\/ÁÉÍÓÚáéíóúÇç]+\#(\w+)\s\(pk\s([\d\.]*)\sal\s([\d\.]*)\s(\w+)\)\s([\s\w\/\-ÁÉÍÓÚáéíóúÇç]+)\s\#DGT(\w+)\s#DGT\s(http://t.co/\w+)'
 
+    print '"Estado", "Nivel", "Vía", "Kilómetro Inicial", "Kilómetro Final", "Sentido", "Provincia", "Población", "URL"'
+
     if unicode(s.protected) != "True" or unicode(s.following) == "True":
         for s in tweepy.Cursor(api.user_timeline, id= user).items(config.getint("Preferences", "tweets_per_page")):
 
