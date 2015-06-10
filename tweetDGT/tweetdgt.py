@@ -105,7 +105,7 @@ def show_user(config,user,view_details_user=0):
 
     s = api.get_user(user)
 
-    traffic_regexp = u'\#(RETENCI[OÓ]NE?S?)\sn?i?v?e?l?\s?(\w+)[\s\w\/ÁÉÍÓÚáéíóúÇç]+\#(\w+)\s\(pk\s([\d\.]*)\sal\s([\d\.]*)\s(\w+)\)\s([\s\w\/\-ÁÉÍÓÚáéíóúÇç]+)\s\#DGT(\w+)\s#DGT\s(http://t.co/\w+)'
+    traffic_regexp = u'\#([a-zA-ZÁÉÍÓÚáéíóúÇç]*)\s\w*\s?(\w+)[\s\w\/ÁÉÍÓÚáéíóúÇç]+\#(\w+)\s\(pk\s([\d\.]*)\s?\w*\s?([\d\.]*)\s?([\w\s\.]+)\)\s?([\s\w\/\-\.ÁÉÍÓÚáéíóúÇç]*)\s\#DGT(\w+)[\s\#\w]+(http://[\w\W]+)'
 
     print u'"Estado", "Nivel", "Vía", "Kilómetro Inicial", "Kilómetro Final", "Sentido", "Provincia", "Población", "URL"'
 
