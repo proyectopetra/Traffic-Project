@@ -1,4 +1,4 @@
-h#!/usr/bin/python
+#!/usr/bin/python
 #coding: utf-8
 
 # CopyRight 2014 Allan Psicobyte (psicobyte@gmail.com)
