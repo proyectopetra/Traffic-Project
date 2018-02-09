@@ -29,15 +29,17 @@ def getAforadores(provincia, poblacion):
 def getSensorData(_nombre,_elemGenCod):
 	theUrl = dgtURL+"DetallesElementos?accion=detallesElemento&tipo=SensorTrafico&nombre="+_nombre+"&elemGenCod="+_elemGenCod
 	print theUrl
-	page = html.fromstring(urllib.urlopen(theUrl).read())
+	strhtml = urllib.urlopen(theUrl).read()
+	#print strhtml
+	page = html.fromstring(strhtml)
 	lis = page.xpath("//li")
 	if len(lis) > 2:
 		intensidad = lis[1].text_content().split(" ")[2]
 		velocidad = lis[2].text_content().split(" ")[3]
 		ocupacion = lis[3].text_content().split(" ")[3].encode("ascii")
 		ligeros	= lis[4].text_content().split(" ")[2]
-
-	return [intensidad,velocidad,ocupacion,ligeros]
+		return [intensidad,velocidad,ocupacion,ligeros]
+	return[-1,-1,-1,-1]
 
 #EJEMPLO DE USO
 afs = getAforadores("18","Granada")
